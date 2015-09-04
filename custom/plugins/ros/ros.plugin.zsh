@@ -1,6 +1,6 @@
 #source the catkin_ws paths (see the ros documentation for the order of the path
 #installation which matters)
-rosPaths=("/opt/ros/indigo/setup.zsh" "$HOME/src/SensingAndGrasping/catkin_ws/devel/setup.zsh")
+rosPaths=("/opt/ros/indigo/setup.zsh" "$HOME/src/org/gtri/SensingAndGrasping/catkin_ws/devel/setup.zsh")
 
 for p in $rosPaths; do
 	if [[ -e $p ]]; then
