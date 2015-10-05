@@ -91,3 +91,4 @@ function _cab_commands() {
 }
 
 command -v cab >/dev/null 2>&1 && { compdef _cab_commands cab }
+export PATH="$PATH:$HOME/.cabal/bin"

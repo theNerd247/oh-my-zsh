@@ -4,5 +4,5 @@ alias als="alias | grep $@"
 alias vimnrd="vim +NERDTree"
 alias copy="xclip -sel 'clipboard' -i"
 alias newterm="/home/noah/scripts/newterm"
-
-
+alias octave="octave --no-gui"
+alias sus="sudo systemctl suspend"
