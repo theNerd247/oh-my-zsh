@@ -4,7 +4,11 @@ rosPaths=("/opt/ros/$ROS_DISTRO")
 
 # remove the flags if you're running python2 as default. This is mainly for
 # ArchLinux users
-alias ccm="catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
+if [[ -n $(uname -a | grep "\-ARCH") ]]; then
+	catkin_ops="-DPYTHON_EXECUTABLE=/usr/bin/python2"
+	catkin_ops+=" -DPYTHON_INCLUDE_DIR=/usr/include/python2.7"
+	catkin_ops+=" -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so"
+fi
 
 # needed exports
 export PATH="$PATH:/opt/ros/$ROS_DISTRO/bin"
@@ -33,7 +37,7 @@ alias rtp="rostopic pub"
 alias rn="rosnode"
 alias rn="rosnode list"
 alias rcd="roscd"
-alias rcm="catkin_make"
+alias rcm="catkin_make $catkin_ops"
 alias rb="rosbag"
 alias rbp="rosbag play"
 alias rbi="rosbag info"
