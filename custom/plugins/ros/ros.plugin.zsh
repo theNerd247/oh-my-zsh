@@ -32,5 +32,11 @@ alias rtp="rostopic pub"
 alias rn="rosnode"
 alias rn="rosnode list"
 alias rcd="roscd"
-
+alias rcm="catkin_make"
+alias rb="rosbag"
+alias rbp="rosbag play"
+alias rbi="rosbag info"
+alias tfv="rosrun tf view_frames && mv frames.pdf /tmp/frames.pdf"
+alias tfm="rosrun tf tf_monitor"
+alias tfe="rosrun tf tf_echo"
 
