@@ -20,7 +20,11 @@ function default()
 
 function githubClone()
 {
-	git clone -b $(default $2 master) https://github.com/$1.git
+	if [[ $1 == "-s" ]]; then
+		git clone -b $(default $3 master) git@github.com:$2.git
+	else
+		git clone -b $(default $2 master) https://github.com/$1.git
+	fi
 }
 
 alias ghcl=githubClone
