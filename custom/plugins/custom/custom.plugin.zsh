@@ -7,7 +7,7 @@ alias newterm="/home/noah/scripts/newterm"
 alias octave="octave --no-gui"
 alias sus="sudo systemctl suspend"
 
-#custom git aliases
+#custom git aliases 
 function default()
 {
 	if [[ -z $1 ]]; then
@@ -28,3 +28,23 @@ function githubClone()
 }
 
 alias ghcl=githubClone
+
+# custom stack aliases
+alias ste="stack exec" 
+alias stt="stack test"
+alias stta="stack test --test-arguments $@"
+
+function stta() { stack test --test-arguments "$@";}
+
+function pdfex() 
+{
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER -dFirstPage=$1 -dLastPage=$2 -sOutputFile="$(basename -s .pdf ${3})_p${1}-p${2}.pdf" ${3}
+}
+
+function cmb()
+{
+	rm -r build
+	mkdir build
+	cd build
+	cmake ..
+}
